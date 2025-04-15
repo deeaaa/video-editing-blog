@@ -1,48 +1,47 @@
----
-layout: page
-title: Posts
-background: '/img/bg-post.jpg'
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Video Editing Projects</title>
+  <link rel="stylesheet" href="assets/css/main.css"> <!-- Dacă ai un fișier CSS -->
+</head>
+<body>
 
-{% for post in paginator.posts %}
+  <header>
+    <h1>My Video Editing Projects</h1>
+    <p>Clips, stories, and creative visuals by me 🎬</p>
+    <hr>
+  </header>
 
-<article class="post-preview">
-  <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-    <h2 class="post-title">{{ post.title }}</h2>
-    {% if post.subtitle %}
-    <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-    {% else %}
-    <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
-    {% endif %}
-  </a>
-  <p class="post-meta">Posted by
-    {% if post.author %}
-    {{ post.author }}
-    {% else %}
-    {{ site.author }}
-    {% endif %}
-    on {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}
-  </p>
-</article>
+  <main>
 
-<hr>
+    <article class="post-preview">
+      <a href="https://www.youtube.com/watch?v=VIDEO_1_ID">
+        <h2 class="post-title">Cinematic Short: Autumn in the City</h2>
+        <h3 class="post-subtitle">A mood edit using warm tones and slow motion.</h3>
+      </a>
+      <p class="post-meta">Posted by Me on April 10, 2025 • 2 min read</p>
+    </article>
 
-{% endfor %}
+    <hr>
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
+    <article class="post-preview">
+      <a href="https://www.youtube.com/watch?v=VIDEO_2_ID">
+        <h2 class="post-title">Event Recap: School Talent Show</h2>
+        <h3 class="post-subtitle">Fast-paced highlights with upbeat music and transitions.</h3>
+      </a>
+      <p class="post-meta">Posted by Me on March 5, 2025 • 3 min read</p>
+    </article>
 
-<div class="clearfix">
+    <hr>
 
-  {% if paginator.previous_page %}
-  <a class="btn btn-primary float-left" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr;
-    Newer<span class="d-none d-md-inline"> Posts</span></a>
-  {% endif %}
+    <!-- More projects here -->
 
-  {% if paginator.next_page %}
-  <a class="btn btn-primary float-right" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older<span class="d-none d-md-inline"> Posts</span> &rarr;</a>
-  {% endif %}
+  </main>
 
-</div>
+  <footer>
+    <p>© 2025 by Deeaaa | <a href="about.html">About Me</a> | <a href="contact.html">Contact</a></p>
+  </footer>
 
-{% endif %}
+</body>
+</html>
